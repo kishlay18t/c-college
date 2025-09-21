@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void input(int *a, int *b)
+// Defining a function for number input.
+
+void input(int *a, int *b) // pointer variable to control variables in main function.
 {
     
     printf("Enter the first number: \n");
@@ -29,8 +31,9 @@ int main()
         printf("\t\t\t\t Multiplication'*'\n");
         printf("\t\t\t\t Division'/'\n");
         printf("\t\t\t\t Exit'0' \n");
-        scanf("%c", &op);
+        scanf(" %c", &op);
 
+        // switch cases for different operators.
         switch (op)
         {
             case '+': 
@@ -58,7 +61,7 @@ int main()
                 printf("Division = %f\n", e);
                 break;
             }
-            case '0': 
+            case '0':
             {
                 exit(0);
                 break;
@@ -70,8 +73,12 @@ int main()
                 continue;
             }
         }
+
+        //continue or not choice
         printf("Do you wish to continue? (y/n): ");
         scanf(" %c", &choice);
 
     }while ( choice == 'y' || choice == 'Y' );
+
+    return 0;
 }

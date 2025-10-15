@@ -2,7 +2,7 @@
 
 int main()
 {
-    int n, temp;
+    int n;
 
     printf("Enter the size of the data: \n");
     scanf("%d", &n);
@@ -39,26 +39,29 @@ int main()
         }
     }*/
 
-    for (int i = 0; i < n - 1; i++) {    // Optimized version.
-    int swapped = 0;   // flag
+    for (int i = 0; i < n - 1; i++) 
+    {    // Optimized version.
+        int swapped = 0;   // flag
 
-    for (int j = 0; j < n - 1 - i; j++) 
-    {
-        if (arr[j] > arr[j + 1]) {
-            // swap
-            int temp = arr[j];
-            arr[j] = arr[j+1];
-            arr[j+1] = temp;
+        for (int j = 0; j < n - 1 - i; j++) 
+        {
+            if (arr[j] > arr[j + 1]) {
+                // swap
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
 
-            swapped = 1; // mark that we did a swap
+                swapped = 1; // mark that we did a swap
+            }
+        }
+
+    // if no swaps happened in this pass, array is already sorted
+        if (swapped == 0) 
+        {
+            break;
         }
     }
 
-    // if no swaps happened in this pass, array is already sorted
-    if (swapped == 0) {
-        break;
-    }
-}
 
 
 

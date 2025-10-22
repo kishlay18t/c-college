@@ -4,7 +4,7 @@ int main()
     char str[50];
     int i, count = 0;
     printf("Enter a string: ");
-    scanf(" %[^\n]c", str);
+    scanf(" %[^\n]", str);
 
     //counting the number of characters in the string.
     for (i = 0; str[i] != '\0'; i++)
@@ -46,4 +46,29 @@ int main()
 
     printf("\n");
 
+    //chatGPT version
+    int j = 0;
+    for (i = count - 1; i >= 0; i--)
+    {
+        revstr[j] = str[i];
+        j++;
+    }
+    revstr[j] = '\0';
+    
+    int pal = 1;
+    for (i = 0; i < count; i++)
+    {
+        if (str[i] != revstr[i])
+        {
+            pal = 0;
+            break;
+        }
+    }
+
+    if (pal)
+        printf("Palindrome!");
+    else
+        printf("Not a palindrome!");
+
+        return 0;
 }

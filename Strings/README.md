@@ -50,3 +50,14 @@ Strings = array of characters. Ends at `'\0'`.
        if (str1[i] != str2[i])
            equal = 0; // switching counter to false
    ```
+7. **For reversing a string**
+   ```c
+   // take two variables, and shrink them till the mid and keep swapping them.
+   int start = 0, end = count - 1;
+   for ( i = 0; i <= (count - 1)/2; i++)
+   {
+      // exchange start and end.
+      start++;
+      end--;
+   }
+   ```

@@ -24,10 +24,10 @@ Strings = array of characters. Ends at `'\0'`.
 
 2. **Using frequency function to count characters:**
    ```c
-   int freq[256] = {0};
+   int freq[256] = {0}; // Make sure the frequency is initialized : = {0};
 
    for (i = 0; str[i] != '\0'; i++)
-       freq[str[i]]++;
+       freq[(unsigned char) str[i]]++;  // char can be signed but indices are positive only. So make it 'unsigned' first.
 
    for (i = 0; i < 256; i++)
        if (freq[str[i]] != 0)
@@ -61,3 +61,32 @@ Strings = array of characters. Ends at `'\0'`.
       end--;
    }
    ```
+8. **Comparing 2 arrays or strings**  
+    ```c
+    int equal = 1;
+    for (i = 0; i <= count; i++)
+    {
+      if (str1[i] != str2[i]) // Use != instead of ==, and raise a flag
+      {
+         eq = 0;
+      }
+    }
+   ```
+9. **ctype.h functions**
+    ```c
+    #include <c type.h>
+
+    // tolower to avoid case sensitivity issues.
+    for (i = 0; i <= end; i++)
+    {
+      str[i] = tolower(str[i]);
+    }
+
+    // to avoid anything except alphabets.
+    for (i = 0; i <= end; i++)
+    {
+      ifalpha( str[i] )
+      {
+         // Do whatever you want here.
+      }
+    }

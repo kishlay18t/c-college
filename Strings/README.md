@@ -1,33 +1,52 @@
-## String Notes:
+## String Notes
 
-**Introduction**
-Strings = array of characters. Ends at '\0'.
-char str[50];
-Input:
-    Without space - scanf("%c", str); <br>
-    With space - scanf("%[^\n]", str); <br>
+### Introduction
+Strings = array of characters. Ends at `'\0'`.  
+`char str[50];`
 
-Output:
-    1. printf("%s", str); <br>
-    2. for (int i = 0; str[i] != '\0'; i++) <br>
-            printf("%c", str[i]);
+**Input:**
+- Without space → `scanf("%s", str);`
+- With space → `scanf(" %[^\n]", str);`
 
-**To remember**
-1. Palindrome -- start with "count - 1" -- '\0'
-2. Using frequency function to count characters: <br>
-    \t int freq[256] = {0}; <br>
-    \t for loop: <br>
-        \t** freq[ str[i] ]++; <br>
-    \t for ( i = 0 to 256 )  
-        \t** if freq[ str[i] ] != 0  
-        \t** printf("Frequency of %c = %d", str[i], freq[ str[i] ])
+**Output:**
+1. `printf("%s", str);`
+2. 
+   ```c
+   for (int i = 0; str[i] != '\0'; i++)
+       printf("%c", str[i]);
+   ```
 
-3. To remove white spaces: Copy everything except spaces to another string.
-4. 'a' - 'A' = 32
-5. String problems often reduce to 1 loop and logic inside -- O(n)
-6. To compare 2 strings: <br>
-    <t>int equal = 1 `raising a counter` <br>
-    \t for loop: <br>
-        \t``if any element not equal <br>
-        \t\t    equal = 0 `switching counter to false`<br>
+---
 
+### To remember
+
+1. **Palindrome** → start with `count - 1` (`'\0'`).
+
+2. **Using frequency function to count characters:**
+   ```c
+   int freq[256] = {0};
+
+   for (i = 0; str[i] != '\0'; i++)
+       freq[str[i]]++;
+
+   for (i = 0; i < 256; i++)
+       if (freq[str[i]] != 0)
+           printf("Frequency of %c = %d\n", str[i], freq[str[i]]);
+   ```
+
+3. **To remove white spaces:**  
+   Copy everything except spaces to another string.
+
+4. `'a' - 'A' = 32`
+
+5. **String problems often reduce to:**  
+   One loop + logic inside → `O(n)`
+
+6. **To compare two strings:**
+   ```c
+   int equal = 1; // raising a counter
+
+   for (i = 0; str1[i] != '\0'; i++)
+       if (str1[i] != str2[i])
+           equal = 0; // switching counter to false
+   ```

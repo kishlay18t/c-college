@@ -49,3 +49,4 @@ Find minimum in the row
 record its column index  
 use that column index to find maximum of that column by changing row index (for loop).  
 ```
+Complexity: `O(r*c)`

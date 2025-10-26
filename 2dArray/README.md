@@ -40,6 +40,7 @@ Here, 2 --> Row
     ```  
 3. **Matrix Multiplication**  
 - Just reason it out on paper.
+- `[p c] X [c q]`
 
 4. **Saddle Point**
 - good question.  Remember the logic:
@@ -49,4 +50,4 @@ Find minimum in the row
 record its column index  
 use that column index to find maximum of that column by changing row index (for loop).  
 ```
-Complexity: `O(r*c)`
+- Complexity: `O(r*c)`

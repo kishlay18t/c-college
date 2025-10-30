@@ -13,5 +13,10 @@ int main()
         printf("%d ", *(p+i));
     }
 
+    free(p);
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", *(p+i));
+    }
     return 0;
 }

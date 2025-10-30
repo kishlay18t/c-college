@@ -27,7 +27,7 @@ array = realloc(array, increased_size * sizeof(int)); // For expanding or decrea
 
 3. **Comparison**
 ```c
-eature	VLA            (int arr[n];)	     malloc (int *arr = malloc(n * sizeof(int));)
+Feature	            VLA (int arr[n];)	     malloc (int *arr = malloc(n * sizeof(int));)
 Memory location	          Stack	                                Heap
 Resizable later	           ❌ No	                            ✅ Yes (via realloc)
 Lifetime	            Ends when function                  ends Until you free() it

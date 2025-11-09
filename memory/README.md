@@ -100,3 +100,6 @@ It lets you store, view, and modify data about **shelves**, **books**, and **pag
 
 3. Learning multi-level pointers in real use cases  
 ```  
+
+- Realloc behaves like malloc if you pass a NULL pointer to it.
+- we pass address to realloc argument -- `arr = (arr, x*sizeof(int));`
